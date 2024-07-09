@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
   buttonVaciar.style.cursor = "pointer";
 
   // Estilos para recuadro h1
-
   recuadro.style.display = "flex";
   recuadro.style.flexDirection = "column";
   recuadro.style.alignItems = "center";

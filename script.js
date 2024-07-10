@@ -111,6 +111,13 @@ userLink.style.color = "#333";
 userLink.style.fontSize = "18px";
 userLink.addEventListener("click", createLoginForm);
 
+// Crear el enlace de productos 
+const productLink = document.createElement("a");
+productLink.href = "productos.html";
+productLink.textContent = "Productos";
+productLink.style.textDecoration = "none";
+
+
 // Crear el icono del carrito
 const cartIcon = document.createElement("div");
 cartIcon.innerHTML = `
@@ -123,9 +130,11 @@ cartIcon.innerHTML = `
 `;
 
 // Añadir los elementos a la barra de menú
-menuBar.appendChild(homeLink);
 menuBar.appendChild(userLink);
+menuBar.appendChild(homeLink);
+menuBar.appendChild(productLink);
 menuBar.appendChild(cartIcon);
+
 
 // Añadir la barra de menú al DOM
 document.body.insertBefore(menuBar, document.body.firstChild);

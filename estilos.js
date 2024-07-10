@@ -1,6 +1,4 @@
-// CSS A TRAVÉS DE JAVASCRIPT
 
-document.addEventListener("DOMContentLoaded", function () {
   // Estilos para el body
   const body = document.body;
   body.style.fontFamily = "Roboto, sans-serif";
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   buttonVaciar.style.marginTop = "10px";
   buttonVaciar.style.cursor = "pointer";
 
-  // Estilos para recuadro h1
+  // Estilos para recuadro
   recuadro.style.display = "flex";
   recuadro.style.flexDirection = "column";
   recuadro.style.alignItems = "center";
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const listItems = document.querySelectorAll("#cartList li");
   listItems.forEach((item) => {
-    item.style.marginBottom = "5px";
+      item.style.marginBottom = "5px";
   });
 
   const total = document.getElementById("total");
@@ -75,41 +73,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Aplicando estilos a cada contenedor
   containers.forEach((container) => {
-    container.style.backgroundColor = "#fbfbfb";
-    container.style.display = "flex";
-    container.style.flexWrap = "wrap";
-    container.style.justifyContent = "space-around";
-    container.style.padding = "30px";
-    container.style.gap = "10px";
+      container.style.backgroundColor = "#fbfbfb";
+      container.style.display = "flex";
+      container.style.flexWrap = "wrap";
+      container.style.justifyContent = "space-around";
+      container.style.padding = "30px";
+      container.style.gap = "10px";
   });
 
   // Aplicando estilos a los productos
   products.forEach((product) => {
-    const h2 = product.querySelector("h2");
-    h2.style.color = "#2c2d2d";
-    h2.style.fontSize = "24px";
+      const h2 = product.querySelector("h2");
+      h2.style.color = "#2c2d2d";
+      h2.style.fontSize = "24px";
   });
 
   // Aplicando estilos a los botones y agregando eventos de hover
   buttons.forEach((button) => {
-    button.style.padding = "10px";
-    button.style.fontSize = "16px";
-    button.style.width = "150px";
-    button.style.borderRadius = "50px";
-    button.style.marginTop = "10px";
-    button.style.cursor = "pointer";
-    button.style.transition = "background-color 0.3s ease, color 0.3s ease";
+      button.style.padding = "10px";
+      button.style.fontSize = "16px";
+      button.style.width = "150px";
+      button.style.borderRadius = "50px";
+      button.style.marginTop = "10px";
+      button.style.cursor = "pointer";
+      button.style.transition = "background-color 0.3s ease, color 0.3s ease";
 
-    // Agregar evento hover
-    button.addEventListener("mouseover", function () {
-      button.style.backgroundColor = "#000000";
-      button.style.color = "#FFFFFF";
-    });
+      // Agregar evento hover
+      button.addEventListener("mouseover", function () {
+          button.style.backgroundColor = "#000000";
+          button.style.color = "#FFFFFF";
+      });
 
-    // Quitar efecto hover
-    button.addEventListener("mouseout", function () {
-      button.style.backgroundColor = "";
-      button.style.color = "";
-    });
+      // Quitar efecto hover
+      button.addEventListener("mouseout", function () {
+          button.style.backgroundColor = "";
+          button.style.color = "";
+      });
   });
-});
+

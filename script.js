@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const products = document.querySelectorAll(".product");
 
-  //Función agregar producto a carrito
+  //FN AGREGAR PRODUCTO AL CARRITO
+
   function addToCart(event) {
     const product = event.target.closest(".product");
     const name = product.querySelector(".name").textContent;
@@ -27,20 +28,22 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", addToCart);
   });
 
-  // Cargar el contenido del carrito al cargar la página
+    // Cargar el contenido del carrito al cargar la página
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   updateCartList(cart);
 });
+
+//FN ACTUALIZAR EL CARRITO
 
 function updateCartList(cart) {
   const cartList = document.getElementById("cartList");
   const total = document.getElementById("total");
   let totalCompra = 0;
 
-  // Limpiar la lista del carrito
+    // Limpiar la lista del carrito
   cartList.innerHTML = "";
 
-  // Actualizar la lista del carrito con los productos almacenados
+    // Actualizar la lista del carrito con los productos almacenados
   cart.forEach((item) => {
     const itemCarrito = document.createElement("li");
     itemCarrito.textContent = `${item.name} : ${item.price}`;
@@ -58,26 +61,27 @@ function updateCartList(cart) {
   cartCounter.textContent = cart.length.toString();
 }
 
-const vaciarCarritoBtn = document.getElementById("vaciarCarrito");
-vaciarCarritoBtn.addEventListener("click", function () {
-  localStorage.removeItem("cart");
-  updateCartList([]);
-});
+  const vaciarCarritoBtn = document.getElementById("vaciarCarrito");
+  vaciarCarritoBtn.addEventListener("click", function () {
+    localStorage.removeItem("cart");
+    updateCartList([]);
+  });
 
-// Mostrar popup de producto añadido al carrito
-function showPopup(message) {
-  const popup = document.createElement("div");
-  popup.textContent = message;
-  popup.style.position = "fixed";
-  popup.style.top = "50%";
-  popup.style.left = "50%";
-  popup.style.transform = "translate(-50%, -50%)";
-  popup.style.backgroundColor = "#7e57c2";
-  popup.style.color = "white";
-  popup.style.padding = "10px 20px";
-  popup.style.borderRadius = "5px";
-  popup.style.zIndex = "9999";
-  document.body.appendChild(popup);
+//FN POPUP CON MENSAJE DE PRODUCTO AÑADIDO AL CARRITO
+
+  function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%, -50%)";
+    popup.style.backgroundColor = "#7e57c2";
+    popup.style.color = "white";
+    popup.style.padding = "10px 20px";
+    popup.style.borderRadius = "5px";
+    popup.style.zIndex = "9999";
+    document.body.appendChild(popup);
 
   // Desaparecer el popup después de 2 segundos
   setTimeout(() => {
@@ -85,7 +89,9 @@ function showPopup(message) {
   }, 2000);
 }
 
-// Crear la barra de menú
+
+//CREACIÓN DE LA BARRA DE MENÚ
+
 const menuBar = document.createElement("nav");
 menuBar.style.display = "flex";
 menuBar.style.justifyContent = "space-between";
@@ -102,7 +108,7 @@ homeLink.style.textDecoration = "none";
 homeLink.style.color = "#333";
 homeLink.style.fontSize = "18px";
 
-// Crear el enlace de usuario (inicio de sesión)
+// Crear el enlace de usuario (o inicio de sesión)
 const userLink = document.createElement("a");
 userLink.href = "#";
 userLink.textContent = "Usuario";
@@ -111,12 +117,11 @@ userLink.style.color = "#333";
 userLink.style.fontSize = "18px";
 userLink.addEventListener("click", createLoginForm);
 
-// Crear el enlace de productos 
+// Crear el enlace de productos
 const productLink = document.createElement("a");
 productLink.href = "productos.html";
 productLink.textContent = "Productos";
 productLink.style.textDecoration = "none";
-
 
 // Crear el icono del carrito
 const cartIcon = document.createElement("div");
@@ -135,11 +140,12 @@ menuBar.appendChild(homeLink);
 menuBar.appendChild(productLink);
 menuBar.appendChild(cartIcon);
 
-
 // Añadir la barra de menú al DOM
 document.body.insertBefore(menuBar, document.body.firstChild);
 
-// Función para crear el formulario de inicio de sesión con Sweetalert2
+
+//FN CREAR FORM DE LOGIN CON SWEET ALERT
+
 function createLoginForm(event) {
   event.preventDefault();
 

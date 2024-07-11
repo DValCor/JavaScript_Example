@@ -3,7 +3,7 @@
   const body = document.body;
   body.style.fontFamily = "Roboto, sans-serif";
 
-  // Elementos a variables
+  // Elementos HTML a variables
   const viewPort = document.querySelector(".viewPort");
   const tarjetasProductos = document.querySelector(".tarjetasProductos");
   const containers = document.querySelectorAll(".container");
